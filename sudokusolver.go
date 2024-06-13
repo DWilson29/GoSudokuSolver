@@ -113,8 +113,17 @@ func main() {
 			}
 		}
 	case 3:
-		fmt.Println("This feature is not supported yet!")
-		return
+		for i := 0; i < 9; i++ {
+			for j := 0; j < 9; j++ {
+				fmt.Printf("Enter digit for Row : %d, Col : %d\n", i+1, j+1)
+				var digit int
+				_, err := fmt.Scanln(&digit)
+				if err != nil {
+					log.Fatal(err)
+				}
+				a[i][j] = uint8(digit)
+			}
+		}
 	default:
 		fmt.Println("Invalid input!")
 		return
